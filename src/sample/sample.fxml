@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
-<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="sample.Controller">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -19,20 +21,49 @@
    <children>
       <Pane prefHeight="800.0" prefWidth="1280.0">
          <children>
-            <TextArea layoutX="142.0" layoutY="129.0" prefHeight="189.0" prefWidth="419.0" promptText="Text here..." style="-fx-background-radius: 8;">
+            <TextArea fx:id="textField" layoutX="142.0" layoutY="129.0" prefHeight="189.0" prefWidth="419.0" promptText="Text here..." style="-fx-background-radius: 8;">
                <font>
                   <Font name="Segoe UI" size="18.0" />
                </font>
             </TextArea>
-            <TextArea layoutX="718.0" layoutY="129.0" prefHeight="189.0" prefWidth="419.0" promptText="Ciphertext here..." style="-fx-background-radius: 8;">
+            <TextArea fx:id="ciphertextField" layoutX="718.0" layoutY="129.0" prefHeight="189.0" prefWidth="419.0" promptText="Ciphertext here..." style="-fx-background-radius: 8;">
                <font>
                   <Font name="Segoe UI" size="18.0" />
                </font>
             </TextArea>
-            <Button layoutX="494.0" layoutY="400.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="292.0" style="-fx-background-color: #06B1FC;" text="ENCRYPT" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="encryptButton" layoutX="494.0" layoutY="400.0" mnemonicParsing="false" onAction="#encryptButtonPressed" prefHeight="70.0" prefWidth="292.0" style="-fx-background-color: #06B1FC; -fx-background-radius: 8;" text="ENCRYPT" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Segoe UI Bold" size="35.0" />
                </font>
+            </Button>
+            <Button layoutX="614.0" layoutY="129.0" mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/swap-icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <CheckBox layoutX="602.0" layoutY="195.0" mnemonicParsing="false" text="CheckBox" />
+            <CheckBox layoutX="602.0" layoutY="234.0" mnemonicParsing="false" text="CheckBox" />
+            <Button layoutX="1083.0" layoutY="273.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/copy-icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="504.0" layoutY="274.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/copy-icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
          </children>
       </Pane>
