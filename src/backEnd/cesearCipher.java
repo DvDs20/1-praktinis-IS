@@ -4,7 +4,7 @@ public class cesearCipher {
 
     public static  String encrypt(String text, int shift) throws Exception {
         String encrypted = "";
-        if (!String.valueOf(shift).isEmpty()){
+        if (!String.valueOf(shift).isBlank() || !String.valueOf(shift).isEmpty()){
             if (shift > 0 && shift < 189) {
                 for (int i = 0; i < text.length(); i++) {
                     int c = text.charAt(i) + shift;
@@ -17,7 +17,7 @@ public class cesearCipher {
                 }
             }
             else {
-                throw new Exception("Bad shift! Type another!");
+                throw new Exception("Bad shift! Type another!!");
             }
         }
         else {
