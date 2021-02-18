@@ -22,10 +22,5 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
-        String text = "123";
-        int s = 4;
-        System.out.println("Text  : " + text);
-        System.out.println("Shift : " + s);
-        System.out.println("Cipher: " + encrypt(text, s));
     }
 }

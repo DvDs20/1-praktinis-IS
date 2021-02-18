@@ -1,17 +1,50 @@
 package sample;
 
+import backEnd.cesearCipher;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 public class Controller {
-    @FXML
-    private TextArea textField;
 
-    @FXML
-    private TextArea ciphertextField;
+    public Button encryptButton;
+    public TextArea secondTextField;
+    public TextArea textField;
+    public TextField shiftTextField;
+    public Button decryptButton;
+    public RadioButton withArrayButton;
 
     public void encryptButtonPressed(ActionEvent actionEvent) {
 
+        if (withArrayButton.isSelected()){
+            String text = textField.getText();
+            int shift = Integer.parseInt(shiftTextField.getText());
+            cesearCipher.encryptusingASCII(text, shift);
+            String ciphertext = String.valueOf(cesearCipher.encrypt(text, shift));
+            secondTextField.clear();
+            secondTextField.setText(ciphertext);
+        }
+        else {
+            String text = textField.getText();
+            int shift = Integer.parseInt(shiftTextField.getText());
+
+            String ciphertext = String.valueOf(cesearCipher.encrypt(text, shift));
+
+            secondTextField.clear();
+            secondTextField.setText(ciphertext);
+        }
+
+    }
+
+    public void decryptButtonPressed(ActionEvent actionEvent) {
+        String ciphertext = textField.getText();
+        int shift = Integer.parseInt(shiftTextField.getText());
+
+        String text = String.valueOf(cesearCipher.decrypt(ciphertext, shift));
+
+        secondTextField.clear();
+        secondTextField.setText(text);
     }
 }
